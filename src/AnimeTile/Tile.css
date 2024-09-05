@@ -1,0 +1,17 @@
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.2s ease-in-out;
+    width: 240px;
+    height: 380px;
+    border-radius: 20px;
+    background-color: #3498db;
+  }
+  
+  .tile:hover {
+    transform: scale(1.05); /* Die Kachel vergrößert sich leicht beim Hover */
+  }
+  

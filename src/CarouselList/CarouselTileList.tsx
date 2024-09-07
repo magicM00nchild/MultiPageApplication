@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Tile from '../AnimeTile/Tile';
+import React, { useState } from 'react';
 import './CarouselTileList.css'
+import Tile, { TileType } from '../Tiles/Tile';
 
 interface Tile {
   id: number;
@@ -17,18 +17,6 @@ const CarouselTileList: React.FC = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(1);
-  //const [viewableTiles, setViewableTiles] = useState([0,1,2])
-  const getVisibleTiles = () => {
-    //if (tiles.length <= 3) return tiles; // Falls es weniger als 3 Tiles gibt
-
-    const start = currentIndex === 0 ? 0 : currentIndex - 1;
-    const end = currentIndex === tiles.length - 1 ? tiles.length : currentIndex + 2;
-
-    return tiles.slice(start, end);
-  };
-
-  const visibleTiles = getVisibleTiles();
-  console.log(currentIndex, visibleTiles[2].content)
 
 
   const handleNext = () => {
@@ -59,22 +47,21 @@ const CarouselTileList: React.FC = () => {
         ◀
       </button>
       <div className="carousel">
-        <Tile>{visibleTiles[0].content}</Tile>
-        <Tile>{visibleTiles[1].content}</Tile>
-        <Tile>{visibleTiles[2].content}</Tile>
- 
-        {/*
-        {visibleTiles.map((tile, index) => (
-          <div
-            key={tile.id}
-            className={`carousel-item ${
-              index === currentIndex ? '' : ''
-            }`}
+        <div
+            className={'carousel-item'}
           >
-            <Tile>{tile.content}</Tile>
-          </div>
-        ))}
-          */}
+        <Tile type={currentIndex === 0 ? TileType.Placeholder : TileType.Inactive }>{currentIndex === 0 ? null : tiles[currentIndex-1].content}</Tile>
+      </div>
+        <div
+            className={'carousel-item active'}
+          >
+          <Tile type={TileType.Main}>{tiles[currentIndex].content}</Tile>
+        </div>
+        <div
+            className={'carousel-item'}
+          >
+        <Tile type={currentIndex === tiles.length-1 ? TileType.Placeholder : TileType.Inactive}>{currentIndex === tiles.length-1 ? null : tiles[currentIndex+1].content}</Tile>
+      </div>
       </div>
       <button className="carousel-button right" onClick={handleNext} disabled={disableRight()}>
         ▶

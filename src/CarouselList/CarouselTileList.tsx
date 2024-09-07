@@ -9,6 +9,7 @@ interface Tile {
 
 const CarouselTileList: React.FC = () => {
   const tiles: Tile[] = [
+    { id: 0, content: 'Tile 0' },
     { id: 1, content: 'Tile 1' },
     { id: 2, content: 'Tile 2' },
     { id: 3, content: 'Tile 3' },
@@ -27,6 +28,7 @@ const CarouselTileList: React.FC = () => {
   };
 
   const visibleTiles = getVisibleTiles();
+  console.log(currentIndex, visibleTiles[2].content)
 
 
   const handleNext = () => {
@@ -38,25 +40,43 @@ const CarouselTileList: React.FC = () => {
       prevIndex === 0 ? tiles.length - 1 : prevIndex - 1
     );
   };
+  const disableLeft = () => {
+    if (currentIndex === 0){
+      return true
+    } 
+    return false
+  }
+  const disableRight = ()=> {
+    if (currentIndex === tiles.length - 1){
+      return true
+    }
+    return false
+   }
 
   return (
     <div className="carousel-container">
-      <button className="carousel-button left" onClick={handlePrev}>
+      <button className="carousel-button left" onClick={handlePrev} disabled={disableLeft()}>
         ◀
       </button>
       <div className="carousel">
+        <Tile>{visibleTiles[0].content}</Tile>
+        <Tile>{visibleTiles[1].content}</Tile>
+        <Tile>{visibleTiles[2].content}</Tile>
+ 
+        {/*
         {visibleTiles.map((tile, index) => (
           <div
             key={tile.id}
             className={`carousel-item ${
-              index === currentIndex ? 'active' : ''
+              index === currentIndex ? '' : ''
             }`}
           >
             <Tile>{tile.content}</Tile>
           </div>
         ))}
+          */}
       </div>
-      <button className="carousel-button right" onClick={handleNext}>
+      <button className="carousel-button right" onClick={handleNext} disabled={disableRight()}>
         ▶
       </button>
     </div>

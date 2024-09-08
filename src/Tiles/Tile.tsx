@@ -12,26 +12,38 @@ interface TileProps {
   height?: string;
   borderRadius?: string;
   backgroundColor?: string;
-  children?: React.ReactNode;
   type: string
+  content?: any
 }
 
 const Tile: React.FC<TileProps> = ({
   borderRadius = '10px',
   backgroundColor = '#3498db',
   type,
-  children
+  content,
 }) => {
   const imageSrc = require('../Pictures/images.png')
   return (
     <div
       className={`tile ${type}`}>
+      {content ? 
       <div className='tilePicture'>
-        {imageSrc && <img src={imageSrc} alt="Tile" />}
+        { imageSrc && <img src={imageSrc} alt="Tile" />}
       </div>
+             : null}
+      {content ? 
       <div className='tileInfo'>
-        {children}
+        <div className="title">
+          <text>
+            { content.title }
+          </text>
+        </div>
+        <div className="info">
+          <text> { content.info } </text>
+        </div>
       </div>
+      : null}
+
     </div>
   );
 };

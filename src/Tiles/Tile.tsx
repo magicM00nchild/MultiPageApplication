@@ -22,10 +22,16 @@ const Tile: React.FC<TileProps> = ({
   type,
   children
 }) => {
+  const imageSrc = require('../Pictures/images.png')
   return (
     <div
       className={`tile ${type}`}>
-      {children}
+      <div className='tilePicture'>
+        {imageSrc && <img src={imageSrc} alt="Tile" />}
+      </div>
+      <div className='tileInfo'>
+        {children}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Tile.css';  
+import './Tile.css';
 
 export enum TileType {
   Main = 'main',
@@ -12,8 +12,9 @@ interface TileProps {
   height?: string;
   borderRadius?: string;
   backgroundColor?: string;
-  type: string
-  content?: any
+  type: string;
+  content?: any;
+  imageSrc?: string;
 }
 
 const Tile: React.FC<TileProps> = ({
@@ -21,29 +22,29 @@ const Tile: React.FC<TileProps> = ({
   backgroundColor = '#3498db',
   type,
   content,
+  imageSrc,
 }) => {
-  const imageSrc = require('../Pictures/images.png')
+  if (!imageSrc){
+    imageSrc = require('../Pictures/images.png')
+  }
+  //const imageSrc = require('../Pictures/images.png')
   return (
-    <div
-      className={`tile ${type}`}>
-      {content ? 
-      <div className='tilePicture'>
-        { imageSrc && <img src={imageSrc} alt="Tile" />}
-      </div>
-             : null}
-      {content ? 
-      <div className='tileInfo'>
-        <div className="title">
-          <text>
-            { content.title }
-          </text>
+    <div className={`tile ${type}`}>
+      {content ? (
+        <div className="tilePicture">
+          {imageSrc && <img src={imageSrc} alt="Tile" />}
         </div>
-        <div className="info">
-          <text> { content.info } </text>
+      ) : null}
+      {content ? (
+        <div className="tileInfo">
+          <div className="title">
+            <text>{content.title}</text>
+          </div>
+          <div className="info">
+            <text> {content.info} </text>
+          </div>
         </div>
-      </div>
-      : null}
-
+      ) : null}
     </div>
   );
 };

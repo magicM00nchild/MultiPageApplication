@@ -4,16 +4,16 @@ import Tile, { TileType } from '../Tiles/Tile';
 
 interface Tile {
   id: number;
-  content: string;
+  content: any
 }
 
 const CarouselTileList: React.FC = () => {
   const tiles: Tile[] = [
-    { id: 0, content: 'Tile 0' },
-    { id: 1, content: 'Tile 1' },
-    { id: 2, content: 'Tile 2' },
-    { id: 3, content: 'Tile 3' },
-    { id: 4, content: 'Tile 4' },
+    { id: 0, content: {title: 'test', info: 'test2' } },
+    { id: 1, content: {title: 'test', info: 'test2' } },
+    { id: 2, content: {title: 'test', info: 'test2' } },
+    { id: 3, content: {title: 'test', info: 'test2' } },
+    { id: 4, content: {title: 'test', info: 'test2' } },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -50,17 +50,17 @@ const CarouselTileList: React.FC = () => {
         <div
             className={'carousel-item'}
           >
-        <Tile type={currentIndex === 0 ? TileType.Placeholder : TileType.Inactive }>{currentIndex === 0 ? null : tiles[currentIndex-1].content}</Tile>
-      </div>
+          <Tile type={currentIndex === 0 ? TileType.Placeholder : TileType.Inactive } content={currentIndex === 0 ? null :tiles[currentIndex-1].content} />
+        </div>
         <div
             className={'carousel-item active'}
           >
-          <Tile type={TileType.Main}>{tiles[currentIndex].content}</Tile>
+          <Tile type={TileType.Main} content={tiles[currentIndex].content} />
         </div>
         <div
             className={'carousel-item'}
           >
-        <Tile type={currentIndex === tiles.length-1 ? TileType.Placeholder : TileType.Inactive}>{currentIndex === tiles.length-1 ? null : tiles[currentIndex+1].content}</Tile>
+          <Tile type={currentIndex === tiles.length-1 ? TileType.Placeholder : TileType.Inactive} content={currentIndex === tiles.length-1 ? null :tiles[currentIndex+1].content} />
       </div>
       </div>
       <button className="carousel-button right" onClick={handleNext} disabled={disableRight()}>

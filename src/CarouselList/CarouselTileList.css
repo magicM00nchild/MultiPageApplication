@@ -1,16 +1,15 @@
 .carousel {
   display: flex;
   width: 100%;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .carousel-item {
   align-items: center;
-  
 }
 
 .carousel-item.active {
-  transform: scale(1.25)
+  transform: scale(1.25);
 }
 
 .carousel-container {

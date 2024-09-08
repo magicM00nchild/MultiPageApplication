@@ -1,64 +1,64 @@
 .tile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    height: 380px;
-    border-radius: 20px;
-    transition: transform 0.2s ease-in-out;
-    flex-direction: column;
-  }
-  .tile.main, .tile.inactive {
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 380px;
+  border-radius: 20px;
+  transition: transform 0.2s ease-in-out;
+  flex-direction: column;
+}
+.tile.main,
+.tile.inactive {
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #3498db;
+}
+.tile.main:hover {
+  transform: scale(1.05); /* Die Kachel vergrößert sich leicht beim Hover */
+}
 
-  }  
-  .tile.main:hover {
-    transform: scale(1.05); /* Die Kachel vergrößert sich leicht beim Hover */
-  }
+/* Bildbereich (obere Hälfte) */
+.tilePicture {
+  width: 100%;
+  height: 60%; /* Nimmt 60% der Höhe ein */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #fff; /* Trennlinie zwischen Bild und Text */
+  flex: 1;
+}
 
- /* Bildbereich (obere Hälfte) */
-  .tilePicture {
-    width: 100%;
-    height: 60%; /* Nimmt 60% der Höhe ein */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid #fff; /* Trennlinie zwischen Bild und Text */
-    flex: 1; 
-  }
+.tilePicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Passt das Bild proportional an */
+  border-radius: 20px 20px 0 0; /* Abrundung nur oben */
+}
 
-  .tilePicture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Passt das Bild proportional an */
-    border-radius: 20px 20px 0 0; /* Abrundung nur oben */
-  }
-  
-  .tileInfo {
-    display: flex;
-    flex-direction: column;   
-    align-items: center;      
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%; 
-    border-radius: 0 0 20px 20px; 
-  } 
+.tileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 20px 20px;
+}
 
-  .tileInfo .title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;  
-    text-align: center;  
-    width: 100%;
-  }
+.tileInfo .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
 
-  .tileInfo .info {
-    font-size: 14px;
-    text-align: center;  
-    width: 100%;
-  }
+.tileInfo .info {
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}

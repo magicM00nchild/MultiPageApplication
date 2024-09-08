@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import CarouselTileList from './CarouselList/CarouselTileList'
+import CarouselTileList from './CarouselList/CarouselTileList';
 
 function App() {
   return (

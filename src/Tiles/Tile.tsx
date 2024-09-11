@@ -4,7 +4,6 @@ import './Tile.css';
 export enum TileType {
   Main = 'main',
   Inactive = 'inactive',
-  Placeholder = 'placeholder',
 }
 
 interface TileProps {

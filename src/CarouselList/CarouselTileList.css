@@ -28,6 +28,7 @@
   font-size: 2rem;
   cursor: pointer;
   z-index: 1;
+  color: white;
 }
 
 .carousel-button.left {

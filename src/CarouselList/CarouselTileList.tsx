@@ -54,7 +54,6 @@ const CarouselTileList: React.FC = () => {
     return TileType.Inactive;
   };
 
-
   const getVisibleTiles = () => {
     const prevIndex = (currentIndex - 1 + tiles.length) % tiles.length;
     const nextIndex = (currentIndex + 1) % tiles.length;
@@ -63,15 +62,15 @@ const CarouselTileList: React.FC = () => {
 
   return (
     <div className="carousel-container">
-      <button
-        className="carousel-button left"
-        onClick={handlePrev}
-      >
+      <button className="carousel-button left" onClick={handlePrev}>
         ◀
       </button>
       <div className="carousel">
-      {getVisibleTiles().map((index) => (
-          <div key={tiles[index].id} className={`carousel-item ${index === currentIndex ? 'active' : ''}`}>
+        {getVisibleTiles().map((index) => (
+          <div
+            key={tiles[index].id}
+            className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
+          >
             <Tile
               type={index === currentIndex ? TileType.Main : TileType.Inactive}
               content={tiles[index].content}
@@ -80,10 +79,7 @@ const CarouselTileList: React.FC = () => {
           </div>
         ))}
       </div>
-      <button
-        className="carousel-button right"
-        onClick={handleNext}
-      >
+      <button className="carousel-button right" onClick={handleNext}>
         ▶
       </button>
     </div>

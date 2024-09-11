@@ -23,8 +23,8 @@ const Tile: React.FC<TileProps> = ({
   content,
   imageSrc,
 }) => {
-  if (!imageSrc){
-    imageSrc = require('../Pictures/images.png')
+  if (!imageSrc) {
+    imageSrc = require('../Pictures/images.png');
   }
   //const imageSrc = require('../Pictures/images.png')
   return (

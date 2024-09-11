@@ -12,27 +12,27 @@ const CarouselTileList: React.FC = () => {
   const tiles: Tile[] = [
     {
       id: 0,
-      content: { title: 'test', info: 'test2' },
+      content: { title: '0', info: 'test2' },
       imageSrc: require('../Pictures/images.png'),
     },
     {
       id: 1,
-      content: { title: 'test', info: 'test2' },
+      content: { title: '1', info: 'test2' },
       imageSrc: require('../Pictures/images.png'),
     },
     {
       id: 2,
-      content: { title: 'test', info: 'test2' },
+      content: { title: '2', info: 'test2' },
       imageSrc: require('../Pictures/images.png'),
     },
     {
       id: 3,
-      content: { title: 'test', info: 'test2' },
+      content: { title: '3', info: 'test2' },
       imageSrc: require('../Pictures/images.png'),
     },
     {
       id: 4,
-      content: { title: 'test', info: 'test2' },
+      content: { title: '4', info: 'test2' },
       imageSrc: require('../Pictures/images.png'),
     },
   ];
@@ -48,65 +48,41 @@ const CarouselTileList: React.FC = () => {
       prevIndex === 0 ? tiles.length - 1 : prevIndex - 1
     );
   };
-  const disableLeft = () => {
-    if (currentIndex === 0) {
-      return true;
-    }
-    return false;
-  };
-  const disableRight = () => {
-    if (currentIndex === tiles.length - 1) {
-      return true;
-    }
-    return false;
+
+  const getTileType = (index: number) => {
+    if (index === currentIndex) return TileType.Main;
+    return TileType.Inactive;
   };
 
 
-  const prev = currentIndex === 0 ? null : tiles[currentIndex - 1]
-  const next = currentIndex === tiles.length - 1 ? null : tiles[currentIndex + 1]
+  const getVisibleTiles = () => {
+    const prevIndex = (currentIndex - 1 + tiles.length) % tiles.length;
+    const nextIndex = (currentIndex + 1) % tiles.length;
+    return [prevIndex, currentIndex, nextIndex];
+  };
 
   return (
     <div className="carousel-container">
       <button
         className="carousel-button left"
         onClick={handlePrev}
-        disabled={disableLeft()}
       >
         ◀
       </button>
       <div className="carousel">
-        <div className={'carousel-item'}>
-          <Tile
-            type={prev == null ? TileType.Placeholder : TileType.Inactive}
-            content={
-              prev?.content
-            }
-            imageSrc={prev?.imageSrc}
-          />
-        </div>
-        <div className={'carousel-item active'}>
-          <Tile
-            type={TileType.Main}
-            content={tiles[currentIndex].content}
-            imageSrc={tiles[currentIndex].imageSrc}
-          />
-        </div>
-        <div className={'carousel-item'}>
-          <Tile
-            type={
-              currentIndex === tiles.length - 1
-                ? TileType.Placeholder
-                : TileType.Inactive
-            }
-            content={ next?.content }
-            imageSrc={next?.imageSrc}
-          />
-        </div>
+      {getVisibleTiles().map((index) => (
+          <div key={tiles[index].id} className={`carousel-item ${index === currentIndex ? 'active' : ''}`}>
+            <Tile
+              type={index === currentIndex ? TileType.Main : TileType.Inactive}
+              content={tiles[index].content}
+              imageSrc={tiles[index].imageSrc}
+            />
+          </div>
+        ))}
       </div>
       <button
         className="carousel-button right"
         onClick={handleNext}
-        disabled={disableRight()}
       >
         ▶
       </button>

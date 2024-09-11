@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './CarouselTileList.css';
 import Tile, { TileType } from '../Tiles/Tile';
+import { AiTwotoneRightCircle, AiTwotoneLeftCircle } from "react-icons/ai";
+
 
 interface Tile {
   id: number;
@@ -63,7 +65,7 @@ const CarouselTileList: React.FC = () => {
   return (
     <div className="carousel-container">
       <button className="carousel-button left" onClick={handlePrev}>
-        ◀
+        <AiTwotoneLeftCircle />
       </button>
       <div className="carousel">
         {getVisibleTiles().map((index) => (
@@ -80,7 +82,7 @@ const CarouselTileList: React.FC = () => {
         ))}
       </div>
       <button className="carousel-button right" onClick={handleNext}>
-        ▶
+        <AiTwotoneRightCircle />
       </button>
     </div>
   );

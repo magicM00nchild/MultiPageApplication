@@ -1,2 +1,3 @@
 # MultiPageApplication
-A quick implementation of a simple webpage 
+
+A quick implementation of a simple webpage

@@ -15,25 +15,23 @@
   background-color: #3498db;
 }
 .tile.main:hover {
-  transform: scale(1.05); /* Die Kachel vergrößert sich leicht beim Hover */
+  transform: scale(1.05); 
+  cursor: pointer;
 }
 
-/* Bildbereich (obere Hälfte) */
 .tilePicture {
   width: 100%;
-  height: 60%; /* Nimmt 60% der Höhe ein */
-  display: flex;
+  height: 60%; 
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #fff; /* Trennlinie zwischen Bild und Text */
-  flex: 1;
+  border-bottom: 2px solid #fff;
 }
 
 .tilePicture img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Passt das Bild proportional an */
-  border-radius: 20px 20px 0 0; /* Abrundung nur oben */
+  object-fit: cover; 
+  border-radius: 20px 20px 0 0; 
 }
 
 .tileInfo {

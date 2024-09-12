@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './CarouselTileList.css';
 import Tile, { TileType } from '../Tiles/Tile';
-import { AiTwotoneRightCircle, AiTwotoneLeftCircle } from "react-icons/ai";
-
+import { AiTwotoneRightCircle, AiTwotoneLeftCircle } from 'react-icons/ai';
 
 interface Tile {
   id: number;

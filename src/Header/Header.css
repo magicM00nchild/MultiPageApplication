@@ -1,15 +1,35 @@
 .header-container {
-    display: flex;
-    align-self: flex-start;
-    background-color: blueviolet;
-    height: 7vh;
-    width: 100%;
+  display: flex;
+  align-self: flex-start;
+  background-color: #242021; 
+  height: 7vh;
+  width: 100%;
 }
 
 .header-home-icon {
-    height: 50px;
-    width: 50px;
-    color: white;
-    padding: 5px;
-    margin-left: 2vh;
+  height: 5vh;
+  width: 50px;
+  color: white;
+  padding: 5px;
+  margin-left: 2vh;
+}
+
+.link-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.link-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.link-list a:hover {
+  background-color: #555; 
+  border-radius: 5px;
 }

@@ -1,6 +1,6 @@
 import './Home.css';
-import CarouselTileList from '../CarouselList/CarouselTileList';
-import Header from '../Header/Header';
+import CarouselTileList from '../Components/CarouselList/CarouselTileList';
+import Header from '../Components/Header/Header';
 import React from 'react';
 
 const Home = () => {

@@ -1,0 +1,30 @@
+:root {
+    /* Colors */
+    --primary-color: #3498db;
+    --secondary-color: #555;
+    --background-color: #282c34;
+    --header-background-color: #242021;
+    --tile-border-color: #fff;
+    --button-background-color: purple;
+    --link-hover-color: #61dafb;
+  
+    /* Spacing */
+    --header-height: 9vh;
+    --tile-width: 240px;
+    --tile-height: 380px;
+    --border-radius: 5px;
+    --tile-border-radius: 20px;
+    --padding-small: 5px;
+    --padding-medium: 10px;
+    --padding-large: 20px;
+  
+    /* Transitions */
+    --transition-duration: 0.3s;
+    --transform-scale-hover: 1.05;
+  
+    /* Font sizes */
+    --font-size-base: 18px;
+    --font-size-small: 14px;
+    --font-size-large: 16px;
+  }
+  

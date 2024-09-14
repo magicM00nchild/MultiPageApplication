@@ -1,89 +1,88 @@
 /* Global styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--header-background-color);
-    height: var(--header-height);
-    padding: 0 2vw;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  .header-home-icon-container {
-    display: flex;
-    align-items: center;
-    padding-right: 5%;
-  }
-  
-  .header-home-icon {
-    height: 5vh;
-    width: 5vh;
-    color: white;
-    padding: var(--padding-small);
-    transition: background-color var(--transition-duration) ease;
-  }
-  
-  .header-home-icon:hover {
-    background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-  }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-background-color);
+  height: var(--header-height);
+  padding: 0 2vw;
+}
 
-  .link-list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 2vw;
-  }
-  
-  .link-list a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    line-height: 1;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-  }
-  
-  .link-list a:hover {
-    background-color: #555;
-  }
-  
-  /* Button List */
-  .button-list {
-    display: flex;
-    align-items: center;
-    gap: 1vw; 
-    justify-content: flex-end; 
-    width: 100vw;
-  }
-  
-  .button-list a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    line-height: 1;
-    background-color: purple;
-    border-radius: 5px;
-    transition: background-color 0.3s ease; 
-  }
-  
-  .button-list a:hover {
-    background-color: #555;
-  }
-  
-  .rounded {
-    border-radius: 5px;
-  }
-  
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  
+.header-home-icon-container {
+  display: flex;
+  align-items: center;
+  padding-right: 5%;
+}
+
+.header-home-icon {
+  height: 5vh;
+  width: 5vh;
+  color: white;
+  padding: var(--padding-small);
+  transition: background-color var(--transition-duration) ease;
+}
+
+.header-home-icon:hover {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.link-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2vw;
+}
+
+.link-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.link-list a:hover {
+  background-color: #555;
+}
+
+/* Button List */
+.button-list {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  justify-content: flex-end;
+  width: 100vw;
+}
+
+.button-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 1;
+  background-color: purple;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button-list a:hover {
+  background-color: #555;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

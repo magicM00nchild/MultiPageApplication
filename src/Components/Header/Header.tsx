@@ -1,13 +1,16 @@
 import React from 'react';
 import './Header.css';
 import { AiFillHome } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className="header-container">
       <div className="header-home-icon-container">
         {/*TODO: switch to correct logo of page */}
-        <AiFillHome className="header-home-icon" />
+        <Link to="/">
+          <AiFillHome className="header-home-icon" />
+        </Link>
       </div>
       <div className="link-list">
         <a href="/anime">Anime</a>

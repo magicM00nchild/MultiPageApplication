@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import './Theme.css';
 import './App.css';
 import CarouselTileList from './CarouselList/CarouselTileList';
 import Header from './Header/Header';

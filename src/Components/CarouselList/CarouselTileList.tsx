@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './CarouselTileList.css';
-import Tile, { TileType } from '../Tiles/Tile';
+import Tile from '../Tiles/Tile';
 import { AiTwotoneRightCircle, AiTwotoneLeftCircle } from 'react-icons/ai';
+import { TileType } from '../../types';
 
-interface Tile {
+export interface TileContent {
   id: number;
   content: any;
   imageSrc: string;
 }
 
-const CarouselTileList: React.FC = () => {
-  const tiles: Tile[] = [
+const CarouselTileList = ({ tiles }: { tiles: TileContent[] }) => {
+  /*
+  const tiles: TileContent[] = [
     {
       id: 0,
       content: { title: '0', info: 'test2' },
@@ -37,6 +39,7 @@ const CarouselTileList: React.FC = () => {
       imageSrc: require('../../Pictures/images.png'),
     },
   ];
+  */
 
   const [currentIndex, setCurrentIndex] = useState(1);
 

@@ -7,7 +7,6 @@ import Layout from './Components/Layout/Layout';
 import SubPageWithCarusel from './Pages/SubPageWithCarusel';
 import { PageType } from './types';
 
-
 const AppRoutes: React.FC = () => {
   return (
     <Routes>

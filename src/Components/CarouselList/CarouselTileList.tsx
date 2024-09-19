@@ -36,10 +36,10 @@ const CarouselTileList = ({ tiles }: { tiles: TileContent[] }) => {
 
   return (
     <div className="carousel-container">
+      <div className="carousel">
       <button className="carousel-button left" onClick={handlePrev}>
         <AiTwotoneLeftCircle />
       </button>
-      <div className="carousel">
         {getVisibleTiles().map((index) => (
           <div
             key={tiles[index].id}
@@ -52,10 +52,11 @@ const CarouselTileList = ({ tiles }: { tiles: TileContent[] }) => {
             />
           </div>
         ))}
-      </div>
-      <button className="carousel-button right" onClick={handleNext}>
+        <button className="carousel-button right" onClick={handleNext}>
         <AiTwotoneRightCircle />
       </button>
+      </div>
+      
     </div>
   );
 };

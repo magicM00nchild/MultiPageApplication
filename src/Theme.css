@@ -17,6 +17,7 @@
   --padding-small: 5px;
   --padding-medium: 10px;
   --padding-large: 20px;
+  --half-tile-width: 140px;
 
   /* Transitions */
   --transition-duration: 0.3s;

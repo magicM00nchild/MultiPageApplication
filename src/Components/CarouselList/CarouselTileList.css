@@ -1,42 +1,47 @@
-.carousel {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.carousel-item {
-  align-items: center;
-}
-
-.carousel-item.active {
-  transform: scale(1.25);
-}
-
 .carousel-container {
-  position: relative;
+  position: relative; 
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
 }
 
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-item {
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item.active {
+  transform: scale(1.25); 
+}
+
+
 .carousel-button {
+  position: relative;  
   background-color: transparent;
   border: none;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   z-index: 1;
   color: white;
 }
 
+
 .carousel-button.left {
-  position: absolute;
-  left: 0;
+  left: var(--half-tile-width); 
 }
 
 .carousel-button.right {
-  position: absolute;
-  right: 0;
+  right: var(--half-tile-width); 
 }

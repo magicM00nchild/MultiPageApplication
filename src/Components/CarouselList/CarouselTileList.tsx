@@ -1,43 +1,16 @@
 import React, { useState } from 'react';
 import './CarouselTileList.css';
-import Tile, { TileType } from '../Tiles/Tile';
+import Tile from '../Tiles/Tile';
 import { AiTwotoneRightCircle, AiTwotoneLeftCircle } from 'react-icons/ai';
+import { TileType } from '../../types';
 
-interface Tile {
+export interface TileContent {
   id: number;
   content: any;
   imageSrc: string;
 }
 
-const CarouselTileList: React.FC = () => {
-  const tiles: Tile[] = [
-    {
-      id: 0,
-      content: { title: '0', info: 'test2' },
-      imageSrc: require('../../Pictures/images.png'),
-    },
-    {
-      id: 1,
-      content: { title: '1', info: 'test2' },
-      imageSrc: require('../../Pictures/images.png'),
-    },
-    {
-      id: 2,
-      content: { title: '2', info: 'test2' },
-      imageSrc: require('../../Pictures/images.png'),
-    },
-    {
-      id: 3,
-      content: { title: '3', info: 'test2' },
-      imageSrc: require('../../Pictures/images.png'),
-    },
-    {
-      id: 4,
-      content: { title: '4', info: 'test2' },
-      imageSrc: require('../../Pictures/images.png'),
-    },
-  ];
-
+const CarouselTileList = ({ tiles }: { tiles: TileContent[] }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const handleNext = () => {
@@ -63,10 +36,10 @@ const CarouselTileList: React.FC = () => {
 
   return (
     <div className="carousel-container">
+      <div className="carousel">
       <button className="carousel-button left" onClick={handlePrev}>
         <AiTwotoneLeftCircle />
       </button>
-      <div className="carousel">
         {getVisibleTiles().map((index) => (
           <div
             key={tiles[index].id}
@@ -79,10 +52,11 @@ const CarouselTileList: React.FC = () => {
             />
           </div>
         ))}
-      </div>
-      <button className="carousel-button right" onClick={handleNext}>
+        <button className="carousel-button right" onClick={handleNext}>
         <AiTwotoneRightCircle />
       </button>
+      </div>
+      
     </div>
   );
 };

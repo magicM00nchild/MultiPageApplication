@@ -1,11 +1,6 @@
 import React from 'react';
 import './Tile.css';
 
-export enum TileType {
-  Main = 'main',
-  Inactive = 'inactive',
-}
-
 interface TileProps {
   width?: string;
   height?: string;

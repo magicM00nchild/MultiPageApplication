@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --primary-color: #3498db;
+  --primary-color: #8e8e8e;
   --secondary-color: #555;
   --background-color: #282c34;
   --header-background-color: #242021;
@@ -17,6 +17,7 @@
   --padding-small: 5px;
   --padding-medium: 10px;
   --padding-large: 20px;
+  --half-tile-width: 140px;
 
   /* Transitions */
   --transition-duration: 0.3s;

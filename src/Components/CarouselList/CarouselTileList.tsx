@@ -37,26 +37,29 @@ const CarouselTileList = ({ tiles }: { tiles: TileContent[] }) => {
   return (
     <div className="carousel-container">
       <div className="carousel">
-      <button className="carousel-button left" onClick={handlePrev}>
-        <AiTwotoneLeftCircle />
-      </button>
+        <button className="carousel-button left" onClick={handlePrev}>
+          <AiTwotoneLeftCircle />
+        </button>
         {getVisibleTiles().map((index) => (
-          <div
-            key={tiles[index].id}
-            className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-          >
-            <Tile
-              type={index === currentIndex ? TileType.Main : TileType.Inactive}
-              content={tiles[index].content}
-              imageSrc={tiles[index].imageSrc}
-            />
+          <div className="carousel-item-list">
+            <div
+              key={tiles[index].id}
+              className={`carousel-item ${index === currentIndex ? 'active' : 'inactive'}`}
+            >
+              <Tile
+                type={
+                  index === currentIndex ? TileType.Main : TileType.Inactive
+                }
+                content={tiles[index].content}
+                imageSrc={tiles[index].imageSrc}
+              />
+            </div>
           </div>
         ))}
         <button className="carousel-button right" onClick={handleNext}>
-        <AiTwotoneRightCircle />
-      </button>
+          <AiTwotoneRightCircle />
+        </button>
       </div>
-      
     </div>
   );
 };

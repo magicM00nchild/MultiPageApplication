@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Tile.css';
+import Modal from '../Modal/Modal';
 
 interface TileProps {
   width?: string;
@@ -18,27 +19,37 @@ const Tile: React.FC<TileProps> = ({
   content,
   imageSrc,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   if (!imageSrc) {
     imageSrc = require('../../Pictures/images.png');
   }
-  //const imageSrc = require('../Pictures/images.png')
+
   return (
-    <div className={`tile ${type}`}>
-      {content ? (
-        <div className="tilePicture">
-          {imageSrc && <img src={imageSrc} alt="Tile" />}
-        </div>
-      ) : null}
-      {content ? (
-        <div className="tileInfo">
-          <div className="title">
-            <text>{content.title}</text>
+    <div>
+      <div className={`tile ${type}`} onClick={openModal}>
+        {content ? (
+          <div className="tilePicture">
+            {imageSrc && <img src={imageSrc} alt="Tile" />}
           </div>
-          <div className="info">
-            <text> {content.info} </text>
+        ) : null}
+        {content ? (
+          <div className="tileInfo">
+            <div className="title">
+              <div>{content.title}</div>
+            </div>
+            <div className="info">
+              <div> {content.info} </div>
+            </div>
           </div>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
+      <Modal show={isModalOpen} handleClose={closeModal}>
+        <p>Dies ist der Inhalt des Pop-ups!</p>
+      </Modal>
     </div>
   );
 };

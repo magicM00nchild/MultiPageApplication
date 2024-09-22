@@ -7,10 +7,8 @@
   --tile-border-color: #fff;
   --button-background-color: purple;
   --link-hover-color: #61dafb;
-  --transparent-overlay: rgba(98, 98, 98, 0.5)
-
-  /* Spacing */
-  --header-height: 9vh;
+  --transparent-overlay: rgba(98, 98, 98, 0.5) /* Spacing */ --header-height:
+    9vh;
   --tile-width: 240px;
   --tile-height: 380px;
   --border-radius: 5px;
